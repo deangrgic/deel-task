@@ -2,17 +2,15 @@ const Sequelize = require("sequelize")
 const { Job, Contract, Profile } = require("../model")
 
 const getJobById = async (id) => {
-  const job = await Job.findOne({
+  return await Job.findOne({
     where: {
       id: id,
     },
   })
-
-  return job
 }
 
 const getUnpaidJobs = async (profileId) => {
-  const jobs = await Job.findAll({
+  return await Job.findAll({
     where: {
       paid: false,
     },
@@ -26,8 +24,6 @@ const getUnpaidJobs = async (profileId) => {
       },
     }],
   })
-
-  return jobs
 }
 
 const payJob = async (id, transaction = null) => {
