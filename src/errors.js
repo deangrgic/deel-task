@@ -1,20 +1,8 @@
-// class DeelError extends Error {
-//   constructor(message, slug, statusCode = 500, stack) {
-//     super()
-//     this.message = message
-//     this.statusCode = statusCode
-//     t
-//   }
-// }
-
 class DeelError extends Error {
   constructor(message, statusCode = 500, errorCode = undefined) {
     super()
-    /** @param {String} */
     this.message = message
-    /** @param {String} */
     this.statusCode = statusCode
-    /** @param {Object} */
     this.errorCode = errorCode
   }
 }
